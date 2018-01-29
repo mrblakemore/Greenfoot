@@ -21,6 +21,12 @@ public class Enemy extends XYMover
         if(isAtEdge())
         {
             setMoveAmount(getMoveAmount() * -1); 
+            flipImage();
         }     
+    }
+    
+    public void flipImage()
+    {
+        getImage().mirrorHorizontally();
     }
 }
