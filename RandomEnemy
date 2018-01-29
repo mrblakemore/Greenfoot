@@ -1,0 +1,31 @@
+import greenfoot.*;
+
+public class RandomEnemy extends Enemy
+{
+    public RandomEnemy(int aMoveAmount)
+    {
+        super(aMoveAmount);
+    }
+    
+    public void move()
+    {
+        super.move();
+        randomTurn();
+    }
+    
+    public void randomTurn()
+    {
+        //slightly random turn...occurs frequently
+        if(Greenfoot.getRandomNumber(5) > 3)
+        {
+            int degrees = Greenfoot.getRandomNumber(9) - 5;
+            turn(degrees);
+        }
+        //possibly a more drastic turn...occurs less often
+        else if(Greenfoot.getRandomNumber(25) > 22)
+        {
+            int degrees = Greenfoot.getRandomNumber(181) - 91;
+            turn(degrees);
+        }
+    }
+}
